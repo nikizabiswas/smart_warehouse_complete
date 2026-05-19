@@ -1,0 +1,5 @@
+Model,R2_Score,MAE,RMSE,CV_R2_Mean,CV_R2_Std
+Gradient Boosting,0.3407,0.027,0.1137,0.3511,0.0787
+Random Forest,0.2411,0.024,0.122,0.3753,0.1544
+Decision Tree,0.1345,0.0243,0.1302,0.2645,0.061
+Linear Regression,0.0764,0.0588,0.1345,0.0849,0.0204

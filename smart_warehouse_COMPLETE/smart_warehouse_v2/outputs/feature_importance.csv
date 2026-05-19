@@ -1,0 +1,19 @@
+Feature,Importance
+No_of_Family_Members,0.470545
+Zone_Cylinders_Delivered,0.153134
+Zone_Cylinders_Ordered,0.091688
+Month_Number,0.07041
+Monthly_Income (₹),0.054581
+LPG_Price_per_Cylinder (₹),0.030198
+Zone_Closing_Stock,0.027034
+Is_Festival_Month,0.026211
+Is_Winter,0.022046
+Zone_Opening_Stock,0.021336
+Days_in_Month,0.009684
+Warehouse_Zone,0.009412
+No_of_Children,0.004892
+Subsidy_Type,0.004737
+Damaged_Cylinders,0.001713
+Lead_Time_Days,0.00128
+Year,0.001099
+No_of_Adults,0.0

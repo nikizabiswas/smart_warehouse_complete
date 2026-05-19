@@ -1,0 +1,9 @@
+Task,Model,CV_Mean,CV_Std,Metric
+Regression,Random Forest,0.3753,0.1544,R2
+Regression,Gradient Boosting,0.3511,0.0787,R2
+Regression,Decision Tree,0.2645,0.061,R2
+Regression,Linear Regression,0.0849,0.0204,R2
+Classification,Random Forest,0.9443,0.0776,F1
+Classification,Gradient Boosting,0.9166,0.1356,F1
+Classification,Decision Tree,0.714,0.0425,F1
+Classification,Logistic Regression,0.6059,0.0173,F1
