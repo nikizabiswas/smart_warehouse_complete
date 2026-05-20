@@ -303,7 +303,10 @@ if page == "🏠 Dashboard":
             fig2.add_trace(go.Scatter(x=[None],y=[None],mode='markers',
                 marker=dict(color=c,size=10,symbol='square'),name=s,showlegend=True))
         fig2.update_layout(height=320,margin=dict(t=20,b=10,l=10,r=10),
-                           legend=dict(orientation='h',y=1.15),**DARK_LAYOUT)
+                           legend=dict(orientation='h',y=1.15,bgcolor='#1A1D24',bordercolor='#3D4048'),
+                           plot_bgcolor='#1A1D24',paper_bgcolor='#1A1D24',font_color='#FAFAFA',
+                           xaxis=dict(gridcolor='#2C2F36',linecolor='#3D4048'),
+                           yaxis=dict(gridcolor='#2C2F36',linecolor='#3D4048'))
         st.plotly_chart(fig2,use_container_width=True)
 
     c3,c4 = st.columns([1.1,0.9])
@@ -599,8 +602,12 @@ elif page == "📊 Model Performance":
                 error_x=dict(type='data',array=df2['CV_Std'],visible=True),
                 marker_color=color,text=df2.apply(lambda r:f"{r['CV_Mean']:.4f}±{r['CV_Std']:.4f}",axis=1),
                 textposition='outside'))
-            fig_cv.update_layout(title=title,height=300,xaxis=dict(range=[0,1.2]),
-                                  margin=dict(t=40,b=10,l=10,r=150),**DARK_LAYOUT)
+            fig_cv.update_layout(title=title,height=300,
+                                  xaxis=dict(range=[0,1.2],gridcolor='#2C2F36',linecolor='#3D4048'),
+                                  yaxis=dict(gridcolor='#2C2F36',linecolor='#3D4048'),
+                                  margin=dict(t=40,b=10,l=10,r=150),
+                                  plot_bgcolor='#1A1D24',paper_bgcolor='#1A1D24',font_color='#FAFAFA',
+                                  legend=dict(bgcolor='#1A1D24',bordercolor='#3D4048'))
             col.plotly_chart(fig_cv, use_container_width=True)
 
         st.markdown('<div class="section-title">What cross-validation tells us</div>', unsafe_allow_html=True)
@@ -729,11 +736,13 @@ elif page == "🗺️ Zone Analysis":
     fig_agg.add_trace(go.Bar(x=zone_agg_sel['Period'],y=zone_agg_sel['Stockouts'],
         name='Stockout Events',marker_color='#C0392B',opacity=0.6,yaxis='y2'))
     fig_agg.update_layout(height=320,
-        yaxis=dict(title='Total Demand (cylinders)',**{k:v for k,v in DARK_LAYOUT['yaxis'].items()}),
+        yaxis=dict(title='Total Demand (cylinders)',gridcolor='#2C2F36',linecolor='#3D4048'),
         yaxis2=dict(title='Stockouts',overlaying='y',side='right',
                     gridcolor='#2C2F36',linecolor='#3D4048'),
-        xaxis_tickangle=-45,legend=dict(bgcolor='#1A1D24'),
-        margin=dict(t=20,b=10,l=10,r=60),**{k:v for k,v in DARK_LAYOUT.items() if k not in ['yaxis']})
+        xaxis=dict(gridcolor='#2C2F36',linecolor='#3D4048'),
+        xaxis_tickangle=-45,legend=dict(bgcolor='#1A1D24',bordercolor='#3D4048'),
+        margin=dict(t=20,b=10,l=10,r=60),
+        plot_bgcolor='#1A1D24',paper_bgcolor='#1A1D24',font_color='#FAFAFA')
     st.plotly_chart(fig_agg, use_container_width=True)
 
     # Risk bubble matrix
